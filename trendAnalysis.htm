@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.77, shrink-to-fit=yes">
+    <meta name="Description" content="Insights and Future Prediction of Covid-19 Pandemic in India">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Insights of Covid'19 in India</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+      *{font-family: 'Roboto Slab', serif}
+    </style>
+</head>
+<body>
+
+<nav class="navbar bg-light navbar-expand-sm navbar-light sticky-top">
+    <a class="navbar-brand" href="index.htm""><b>Insights of Covid-19</b> <i class="fas fa-virus"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.htm"><b>Home</b></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="trendAnalysis.htm"><b>Trend Analysis <i class="fas fa-chart-line"></i></b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="futurePrediction.htm"><b>Future Prediction</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="helpfulResources.htm"><b>Helpful Resources</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<p class="text-center text-danger">
+    <br>
+    Please refresh the page to see the latest information
+</p>
+
+<p class="text-center">
+    Last updated on 25-04-2020 at 06:49:00
+</p>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col mb-3">
+            <div class="card border-0">
+                  <div class="text-primary">
+                    <div class="card-body">
+                      <h2 class="card-title text-center"><b><a href="https://icmr.nic.in/node/39071" target="_blank" rel="noopener">Total Samples Tested</a></b></h2>
+                      <p class="card-text text-center"><b> 462621</b></p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+    
+        <div class="col-lg-3 col mb-3">
+            <div class="card bg-primary border-0">
+                  <div class="text-white">
+                    <div class="card-body">
+                      <h4 class="card-title"><b>Confirmed</b></h4>
+                      <p class="card-text">24447 (+1408)</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col mb-3">
+            <div class="card bg-danger border-0">
+                  <div class="text-white">
+                    <div class="card-body">
+                      <h4 class="card-title"><b>Active</b></h4>
+                      <p class="card-text">18171</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col mb-3">
+            <div class="card bg-success border-0">
+                  <div class="text-white">
+                    <div class="card-body">
+                      <h4 class="card-title"><b>Recovered</b></h4>
+                      <p class="card-text">5496 (+484)</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3 col mb-3">
+            <div class="card bg-secondary border-0">
+                  <div class="text-white">
+                    <div class="card-body">
+                      <h4 class="card-title"><b>Deceased</b></h4>
+                      <p class="card-text">780 (+59)</p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+<h3 class="text-center">
+    <b>Analysing Corona Virus spread in Different States</b>
+</h3>
+
+<br>
+<div class="text-center">
+  <input type="text" name="" id="state_data_search" placeholder=" Search by State" onkeyup="search()">
+</div>
+<br>
+
+<div class="container mb-3">
+<div class="table-responsive">
+<table border="0" class="table table-striped table-bordered table-sm text-left <table border="0" class="dataframe" align="left" id="state_data_table">
+  <thead class="thead-dark">
+    <tr style="text-align: left;">
+      <th>State</th>
+      <th>Confirmed</th>
+      <th>Active</th>
+      <th>Recovered</th>
+      <th>Deaths</th>
+      <th>Recovery Rate(%)</th>
+      <th>Death Rate(%)</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maharashtra</td>
+      <td>6817</td>
+      <td>5559</td>
+      <td>957</td>
+      <td>301</td>
+      <td>14.0</td>
+      <td>4.4</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Delhi</td>
+      <td>2514</td>
+      <td>1604</td>
+      <td>857</td>
+      <td>53</td>
+      <td>34.1</td>
+      <td>2.1</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td>2815</td>
+      <td>2423</td>
+      <td>265</td>
+      <td>127</td>
+      <td>9.4</td>
+      <td>4.5</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td>2034</td>
+      <td>1509</td>
+      <td>493</td>
+      <td>32</td>
+      <td>24.2</td>
+      <td>1.6</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>1755</td>
+      <td>867</td>
+      <td>866</td>
+      <td>22</td>
+      <td>49.3</td>
+      <td>1.3</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>1846</td>
+      <td>1544</td>
+      <td>210</td>
+      <td>92</td>
+      <td>11.4</td>
+      <td>5.0</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>1621</td>
+      <td>1370</td>
+      <td>226</td>
+      <td>25</td>
+      <td>13.9</td>
+      <td>1.5</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Telangana</td>
+      <td>983</td>
+      <td>667</td>
+      <td>291</td>
+      <td>25</td>
+      <td>29.6</td>
+      <td>2.5</td>
+      <td>25/04/2020</td>
+    </tr>
+    <tr>
+      <td>Andhra Pradesh</td>
+      <td>955</td>
+      <td>781</td>
+      <td>145</td>
+      <td>29</td>
+      <td>15.2</td>
+      <td>3.0</td>
+      <td>23/04/2020</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>474</td>
+      <td>304</td>
+      <td>152</td>
+      <td>18</td>
+      <td>32.1</td>
+      <td>3.8</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td>450</td>
+      <td>116</td>
+      <td>331</td>
+      <td>3</td>
+      <td>73.6</td>
+      <td>0.7</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Jammu and Kashmir</td>
+      <td>454</td>
+      <td>340</td>
+      <td>109</td>
+      <td>5</td>
+      <td>24.0</td>
+      <td>1.1</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>West Bengal</td>
+      <td>514</td>
+      <td>393</td>
+      <td>103</td>
+      <td>18</td>
+      <td>20.0</td>
+      <td>3.5</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Haryana</td>
+      <td>275</td>
+      <td>86</td>
+      <td>186</td>
+      <td>3</td>
+      <td>67.6</td>
+      <td>1.1</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Punjab</td>
+      <td>298</td>
+      <td>211</td>
+      <td>70</td>
+      <td>17</td>
+      <td>23.5</td>
+      <td>5.7</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Bihar</td>
+      <td>223</td>
+      <td>177</td>
+      <td>44</td>
+      <td>2</td>
+      <td>19.7</td>
+      <td>0.9</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Odisha</td>
+      <td>94</td>
+      <td>60</td>
+      <td>33</td>
+      <td>1</td>
+      <td>35.1</td>
+      <td>1.1</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Uttarakhand</td>
+      <td>48</td>
+      <td>23</td>
+      <td>25</td>
+      <td>0</td>
+      <td>52.1</td>
+      <td>0.0</td>
+      <td>22/04/2020</td>
+    </tr>
+    <tr>
+      <td>Jharkhand</td>
+      <td>59</td>
+      <td>48</td>
+      <td>8</td>
+      <td>3</td>
+      <td>13.6</td>
+      <td>5.1</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Himachal Pradesh</td>
+      <td>40</td>
+      <td>20</td>
+      <td>18</td>
+      <td>2</td>
+      <td>45.0</td>
+      <td>5.0</td>
+      <td>23/04/2020</td>
+    </tr>
+    <tr>
+      <td>Chhattisgarh</td>
+      <td>36</td>
+      <td>6</td>
+      <td>30</td>
+      <td>0</td>
+      <td>83.3</td>
+      <td>0.0</td>
+      <td>23/04/2020</td>
+    </tr>
+    <tr>
+      <td>Assam</td>
+      <td>36</td>
+      <td>16</td>
+      <td>19</td>
+      <td>1</td>
+      <td>52.8</td>
+      <td>2.8</td>
+      <td>20/04/2020</td>
+    </tr>
+    <tr>
+      <td>Chandigarh</td>
+      <td>27</td>
+      <td>12</td>
+      <td>15</td>
+      <td>0</td>
+      <td>55.6</td>
+      <td>0.0</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Ladakh</td>
+      <td>18</td>
+      <td>2</td>
+      <td>16</td>
+      <td>0</td>
+      <td>88.9</td>
+      <td>0.0</td>
+      <td>23/04/2020</td>
+    </tr>
+    <tr>
+      <td>Andaman and Nicobar Islands</td>
+      <td>29</td>
+      <td>18</td>
+      <td>11</td>
+      <td>0</td>
+      <td>37.9</td>
+      <td>0.0</td>
+      <td>24/04/2020</td>
+    </tr>
+    <tr>
+      <td>Meghalaya</td>
+      <td>12</td>
+      <td>11</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>8.3</td>
+      <td>18/04/2020</td>
+    </tr>
+    <tr>
+      <td>Goa</td>
+      <td>7</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>19/04/2020</td>
+    </tr>
+    <tr>
+      <td>Puducherry</td>
+      <td>7</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>57.1</td>
+      <td>0.0</td>
+      <td>19/04/2020</td>
+    </tr>
+    <tr>
+      <td>Manipur</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>20/04/2020</td>
+    </tr>
+    <tr>
+      <td>Tripura</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>23/04/2020</td>
+    </tr>
+    <tr>
+      <td>Mizoram</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>26/03/2020</td>
+    </tr>
+    <tr>
+      <td>Arunachal Pradesh</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>100.0</td>
+      <td>0.0</td>
+      <td>16/04/2020</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<script>
+  const search = () =>{
+    let filter = document.getElementById('state_data_search').value.toUpperCase();
+    let resources_table = document.getElementById('state_data_table');
+    let tr = resources_table.getElementsByTagName('tr');
+    for(var i=0; i<tr.length; i++){
+      let td = tr[i].getElementsByTagName('td')[0];
+      if(td){
+        let textvalue = td.textContent || td.innerHTML;
+        if(textvalue.toUpperCase().indexOf(filter) > -1){
+          tr[i].style.display = "";
+        }
+        else{
+          tr[i].style.display = "none";
+        }
+        }
+      }
+    }
+</script>
+
+<br>
+<br>
+
+<h3 class="text-center">
+    <b>Trend analysis of Corona Virus spread using the data of last 14 days</b>
+</h3>
+
+<div class="container mb-3">
+<div class="table-responsive">
+<table border="0" class="table table-striped table-bordered table-sm text-left <table border="0" class="dataframe" align="left">
+  <thead class="thead-dark">
+    <tr style="text-align: left;">
+      <th></th>
+      <th>Daily Confirmations</th>
+      <th>Daily Recoveries</th>
+      <th>Daily Deaths</th>
+      <th>Total Confirmations</th>
+      <th>Total Recoveries</th>
+      <th>Total Deaths</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11 April</th>
+      <td>854</td>
+      <td>186</td>
+      <td>40</td>
+      <td>8452</td>
+      <td>972</td>
+      <td>289</td>
+    </tr>
+    <tr>
+      <th>12 April</th>
+      <td>758</td>
+      <td>114</td>
+      <td>42</td>
+      <td>9210</td>
+      <td>1086</td>
+      <td>331</td>
+    </tr>
+    <tr>
+      <th>13 April</th>
+      <td>1243</td>
+      <td>112</td>
+      <td>27</td>
+      <td>10453</td>
+      <td>1198</td>
+      <td>358</td>
+    </tr>
+    <tr>
+      <th>14 April</th>
+      <td>1031</td>
+      <td>167</td>
+      <td>37</td>
+      <td>11484</td>
+      <td>1365</td>
+      <td>395</td>
+    </tr>
+    <tr>
+      <th>15 April</th>
+      <td>886</td>
+      <td>144</td>
+      <td>27</td>
+      <td>12370</td>
+      <td>1509</td>
+      <td>422</td>
+    </tr>
+    <tr>
+      <th>16 April</th>
+      <td>1061</td>
+      <td>258</td>
+      <td>26</td>
+      <td>13431</td>
+      <td>1767</td>
+      <td>448</td>
+    </tr>
+    <tr>
+      <th>17 April</th>
+      <td>922</td>
+      <td>273</td>
+      <td>38</td>
+      <td>14353</td>
+      <td>2040</td>
+      <td>486</td>
+    </tr>
+    <tr>
+      <th>18 April</th>
+      <td>1371</td>
+      <td>426</td>
+      <td>35</td>
+      <td>15724</td>
+      <td>2466</td>
+      <td>521</td>
+    </tr>
+    <tr>
+      <th>19 April</th>
+      <td>1580</td>
+      <td>388</td>
+      <td>38</td>
+      <td>17304</td>
+      <td>2854</td>
+      <td>559</td>
+    </tr>
+    <tr>
+      <th>20 April</th>
+      <td>1239</td>
+      <td>419</td>
+      <td>33</td>
+      <td>18543</td>
+      <td>3273</td>
+      <td>592</td>
+    </tr>
+    <tr>
+      <th>21 April</th>
+      <td>1537</td>
+      <td>703</td>
+      <td>53</td>
+      <td>20080</td>
+      <td>3976</td>
+      <td>645</td>
+    </tr>
+    <tr>
+      <th>22 April</th>
+      <td>1292</td>
+      <td>394</td>
+      <td>36</td>
+      <td>21372</td>
+      <td>4370</td>
+      <td>681</td>
+    </tr>
+    <tr>
+      <th>23 April</th>
+      <td>1667</td>
+      <td>642</td>
+      <td>40</td>
+      <td>23039</td>
+      <td>5012</td>
+      <td>721</td>
+    </tr>
+    <tr>
+      <th>24 April</th>
+      <td>1408</td>
+      <td>484</td>
+      <td>59</td>
+      <td>24447</td>
+      <td>5496</td>
+      <td>780</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <canvas id="myChart_3"></canvas>
+        <script>
+        var ctx_3 = document.getElementById('myChart_3').getContext('2d');
+        var mixedChart_3 = new Chart(ctx_3, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Total Confirmations',
+                    data: [8452, 9210, 10453, 11484, 12370, 13431, 14353, 15724, 17304, 18543, 20080, 21372, 23039, 24447],
+                    borderColor: "rgba(0,0,255,1)",
+                    fill: true
+                }, {
+                    label: 'Total Recoveries',
+                    data: [972, 1086, 1198, 1365, 1509, 1767, 2040, 2466, 2854, 3273, 3976, 4370, 5012, 5496],
+                    borderColor: "rgba(92,184,92,1)",
+                    type: 'line',
+                    fill: false,
+                    order: 1
+                }, {
+                    label: 'Total Deaths',
+                    data: [289, 331, 358, 395, 422, 448, 486, 521, 559, 592, 645, 681, 721, 780],
+                    backgroundColor: [
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                    ],
+                    type: 'bar',
+                    order: 2
+                }],
+                labels: ['11 April ', '12 April ', '13 April ', '14 April ', '15 April ', '16 April ', '17 April ', '18 April ', '19 April ', '20 April ', '21 April ', '22 April ', '23 April ', '24 April ']
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            drawOnChartArea: false
+                        }
+                    }],
+                    yAxes: [{
+                         gridLines: {
+                            drawOnChartArea: false
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+    </div>
+</div>
+<br>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <canvas id="myChart_2"></canvas>
+        <script>
+        var ctx_2 = document.getElementById('myChart_2').getContext('2d');
+        var mixedChart_2 = new Chart(ctx_2, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Daily Confirmations',
+                    data: [854, 758, 1243, 1031, 886, 1061, 922, 1371, 1580, 1239, 1537, 1292, 1667, 1408],
+                    borderColor: "rgba(0,0,255,1)",
+                    fill: true
+                }, {
+                    label: 'Daily Recoveries',
+                    data: [186, 114, 112, 167, 144, 258, 273, 426, 388, 419, 703, 394, 642, 484],
+                    borderColor: "rgba(92,184,92,1)",
+                    type: 'line',
+                    fill: false,
+                    order: 2
+                }, {
+                    label: 'Daily Deaths',
+                    data: [40, 42, 27, 37, 27, 26, 38, 35, 38, 33, 53, 36, 40, 59],
+                    borderColor: "rgba(255,0,0,1)",
+                    backgroundColor: [
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                        'rgba(255, 0, 0, 1)',
+                    ],
+                    type: 'bar',
+                    order: 3
+                }],
+                labels: ['11 April ', '12 April ', '13 April ', '14 April ', '15 April ', '16 April ', '17 April ', '18 April ', '19 April ', '20 April ', '21 April ', '22 April ', '23 April ', '24 April ']
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            drawOnChartArea: false
+                        }
+                    }],
+                    yAxes: [{
+                         gridLines: {
+                            drawOnChartArea: false
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+    </div>
+</div>
+
+<br>
+<br>
+<h3 class="text-center">
+    <b>Trend Analysis using the test reports of last 14 days from ICMR</b>
+</h3>
+
+<div class="container mb-3">
+<div class="table-responsive">
+<table border="0" class="table table-striped table-bordered table-sm text-center <table border="0" class="dataframe" align="center">
+  <thead class="thead-dark">
+    <tr style="text-align: center;">
+      <th>Total Sample Tested</th>
+      <th>Total Positive Cases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>114015</td>
+      <td>4616</td>
+    </tr>
+    <tr>
+      <td>127919</td>
+      <td>5114</td>
+    </tr>
+    <tr>
+      <td>144910</td>
+      <td>5705</td>
+    </tr>
+    <tr>
+      <td>161330</td>
+      <td>6872</td>
+    </tr>
+    <tr>
+      <td>179374</td>
+      <td>7703</td>
+    </tr>
+    <tr>
+      <td>195748</td>
+      <td>8312</td>
+    </tr>
+    <tr>
+      <td>217554</td>
+      <td>9341</td>
+    </tr>
+    <tr>
+      <td>244893</td>
+      <td>10307</td>
+    </tr>
+    <tr>
+      <td>274599</td>
+      <td>11297</td>
+    </tr>
+    <tr>
+      <td>302956</td>
+      <td>12581</td>
+    </tr>
+    <tr>
+      <td>335123</td>
+      <td>14098</td>
+    </tr>
+    <tr>
+      <td>372123</td>
+      <td>16365</td>
+    </tr>
+    <tr>
+      <td>401586</td>
+      <td>17615</td>
+    </tr>
+    <tr>
+      <td>462621</td>
+      <td>26943</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+        <canvas id="myChart_1"></canvas>
+        <script>
+        var ctx_1 = document.getElementById('myChart_1').getContext('2d');
+        var mixedChart_1 = new Chart(ctx_1, {
+            type: 'line',
+            data: {
+                labels: [114015, 127919, 144910, 161330, 179374, 195748, 217554, 244893, 274599, 302956, 335123, 372123, 401586, 462621],
+                datasets: [{
+                    label: 'Total Confirmations',
+                    data: [4616, 5114, 5705, 6872, 7703, 8312, 9341, 10307, 11297, 12581, 14098, 16365, 17615, 26943],
+                    borderColor: "rgba(255,0,0,1)",
+                    fill: true
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Total Sample tested'
+                        },
+                        gridLines: {
+                            drawOnChartArea: false
+                        }
+                    }],
+                    yAxes: [{
+                         gridLines: {
+                            drawOnChartArea: false
+                        }
+                    }]
+                }
+            }
+            
+        });
+        </script>
+    </div>
+</div>
+
+<footer class="py-3">
+    <div class="sticky-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <p class="m-0 text-center text-dark">
+                    Copyright <i class="fa fa-copyright"></i> 2020. Made with <i class="fa fa-heart"></i> by <a href="https://github.com/sudo-rajarshi" target="_blank">Rajarshi Bhadra</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

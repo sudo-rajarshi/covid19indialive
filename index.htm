@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.77, shrink-to-fit=yes">
+    <meta name="Description" content="Insights and Future Prediction of Covid-19 Pandemic in India">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Insights of Covid-19 in India</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+      *{font-family: 'Roboto Slab', serif}
+    </style>
+</head>
+<body>
+
+<nav class="navbar bg-light navbar-expand-sm navbar-light sticky-top">
+    <a class="navbar-brand" href="index.htm""><b>Insights of Covid-19</b> <i class="fas fa-virus"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.htm"><b>Home <i class="fas fa-home"></i></b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="trendAnalysis.htm"><b>Trend Analysis</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="futurePrediction.htm"><b>Future Prediction</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="helpfulResources.htm"><b>Helpful Resources</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="text-center">
+    <p class="text-center text-danger">
+        <br>
+        Please refresh the page to see the latest information
+    </p>
+    <h1 class="text-center"><b>Insights of Covid-19 Pandemic in India</b></h1>
+    <p class="text-center">
+        Live information about Novel Corona Virus spread in India.
+        <br>
+        Check out the <a href="https://telegra.ph/Data-Sources-for-Covidtracker-indiaml-04-05" target="_blank" rel="noopener">data sources</a> for this website.
+        <br>
+        Last updated on 25-04-2020 at 06:49:00
+        <br>
+        <br>
+        <br>
+        <br>
+    </p>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        
+        <div class="col-lg-4 col mb-3">
+            <div class="card border-0">
+                  <div class="text-primary">
+                    <div class="card-body">
+                      <h6 class="card-title"><b>Total <br> Confirmed</b></h6>
+                      <h3 class="card-text"><b>24447</b></h3>
+                      <h6 class="card-text"> +1408</h6>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    
+        <div class="col-lg-8 col mb-3">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+            <canvas id="myChart_3" width="400" height="100""></canvas>
+            <script>
+            var ctx_3 = document.getElementById('myChart_3').getContext('2d');
+            var mixedChart_3 = new Chart(ctx_3, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Daily Confirmations',
+                        data: [854, 758, 1243, 1031, 886, 1061, 922, 1371, 1580, 1239, 1537, 1292, 1667, 1408],
+                        borderColor: "rgba(0,0,255,1)",
+                        fill: false
+                    }],
+                    labels: ['11 April ', '12 April ', '13 April ', '14 April ', '15 April ', '16 April ', '17 April ', '18 April ', '19 April ', '20 April ', '21 April ', '22 April ', '23 April ', '24 April ']
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                drawOnChartArea: false
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Time'
+                        },
+                            ticks: {
+                                display: false
+                            }
+                        }],
+                        yAxes: [{
+                             gridLines: {
+                                drawOnChartArea: false
+                            },
+                            ticks: {
+                                display: false
+                            }
+                        }]
+                    }
+                }
+            });
+            </script>
+        </div>
+        
+        <div class="col-lg-4 col mb-3">
+            <div class="card border-0">
+                  <div class="text-success">
+                    <div class="card-body">
+                      <h6 class="card-title"><b>Total <br> Recovered</b></h6>
+                      <h3 class="card-text"><b>5496</b></h3>
+                      <h6 class="card-text"> +484</h6>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        
+        <div class="col-lg-8 col mb-3">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+            <canvas id="myChart_31" width="400" height="100" "></canvas>
+            <script>
+            var ctx_31 = document.getElementById('myChart_31').getContext('2d');
+            var mixedChart_31 = new Chart(ctx_31, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Daily Recoveries',
+                        data: [186, 114, 112, 167, 144, 258, 273, 426, 388, 419, 703, 394, 642, 484],
+                        borderColor: "rgba(92,184,92,1)",
+                        fill: false
+                    }],
+                    labels: ['11 April ', '12 April ', '13 April ', '14 April ', '15 April ', '16 April ', '17 April ', '18 April ', '19 April ', '20 April ', '21 April ', '22 April ', '23 April ', '24 April ']
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                drawOnChartArea: false
+                            },
+                            ticks: {
+                                display: false
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Time'
+                        },
+                        }],
+                        yAxes: [{
+                             gridLines: {
+                                drawOnChartArea: false
+                            },
+                            ticks: {
+                                display: false
+                            },
+                        }]
+                    }
+                }
+            });
+            </script>
+        </div>
+        
+        <div class="col-lg-4 col mb-3">
+            <div class="card border-0">
+                  <div class="text-danger">
+                    <div class="card-body">
+                      <h6 class="card-title"><b>Total <br> Deceased</b></h6>
+                      <h3 class="card-text"><b>780</b></h3>
+                      <h6 class="card-text"> +59</h6>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-8 col mb-3">
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+            <canvas id="myChart_32" width="400" height="100" "></canvas>
+            <script>
+            var ctx_32 = document.getElementById('myChart_32').getContext('2d');
+            var mixedChart_32 = new Chart(ctx_32, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Daily Deaths',
+                        data: [40, 42, 27, 37, 27, 26, 38, 35, 38, 33, 53, 36, 40, 59],
+                        borderColor: "rgba(255,0,0,1)",
+                        fill: false
+                    }],
+                    labels: ['11 April ', '12 April ', '13 April ', '14 April ', '15 April ', '16 April ', '17 April ', '18 April ', '19 April ', '20 April ', '21 April ', '22 April ', '23 April ', '24 April ']
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                drawOnChartArea: false
+                            },
+                            ticks: {
+                                display: false
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Time'
+                        },
+                        }],
+                        yAxes: [{
+                             gridLines: {
+                                drawOnChartArea: false
+                            },
+                            ticks: {
+                                display: false
+                            }
+                        }]
+                    }
+                }
+            });
+            </script>
+        </div>
+
+        
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-lg-6 col mb-3">
+            <div class="card bg-success border-0">
+                  <div class="text-white">
+                    <div class="card-body">
+                      <h4 class="card-title"><b>Recovery Rate</b></h4>
+                      <p class="card-text"><b>22.5%</b></p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col mb-3">
+            <div class="card bg-danger border-0">
+                  <div class="text-white">
+                    <div class="card-body">
+                      <h4 class="card-title"><b>Death Rate</b></h4>
+                      <p class="card-text"><b>3.2%</b></p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<br>
+
+<footer class="py-3">
+    <div class="sticky-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <p class="m-0 text-center text-dark">
+                    Copyright <i class="fa fa-copyright"></i> 2020. Made with <i class="fa fa-heart"></i> by <a href="https://github.com/sudo-rajarshi" target="_blank" rel="noopener">Rajarshi Bhadra</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

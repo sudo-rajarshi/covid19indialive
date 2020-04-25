@@ -1,0 +1,811 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.77, shrink-to-fit=yes">
+    <meta name="Description" content="Insights and Future Prediction of Covid-19 Pandemic in India">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Insights of Covid'19 in India</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+      *{font-family: 'Roboto Slab', serif}
+    </style>
+</head>
+<body>
+
+<nav class="navbar bg-light navbar-expand-sm navbar-light sticky-top">
+    <a class="navbar-brand" href="index.htm""><b>Insights of Covid-19</b> <i class="fas fa-virus"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.htm"><b>Home</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="trendAnalysis.htm"><b>Trend Analysis</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="futurePrediction.htm"><b>Future Prediction</b></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="helpfulResources.htm"><b>Helpful Resources <i class="fas fa-hospital-symbol"></i></b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<p class="text-center text-danger">
+    <br>
+    Please refresh the page to see the latest information
+</p>
+
+
+<h2 class="text-center">
+    <b>Covid Testing Centers</b>
+</h2>
+
+<br>
+<div class="text-center">
+  <input type="text" name="" id="resources_search" placeholder=" Search by State" onkeyup="search()">
+</div>
+<br>
+
+<div class="container mb-3">
+<div class="table-responsive">
+<table border="0" class="table table-striped table-bordered table-sm text-left <table border="0" class="dataframe" align="left" id="resources_table">
+  <thead class="thead-dark">
+    <tr style="text-align: left;">
+      <th>State</th>
+      <th>City</th>
+      <th>Organisation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Andaman &amp; Nicobar</td>
+      <td>Port Blair</td>
+      <td>Regional Medical Research Centre (ICMR)</td>
+    </tr>
+    <tr>
+      <td>Andhra Pradesh</td>
+      <td>Kakinada</td>
+      <td>Rangaraya Medical College</td>
+    </tr>
+    <tr>
+      <td>Andhra Pradesh</td>
+      <td>Vijayawada</td>
+      <td>Sidhartha Medical College</td>
+    </tr>
+    <tr>
+      <td>Assam</td>
+      <td>Dibrugarh</td>
+      <td>Regional Medical Research Center, NE Region</td>
+    </tr>
+    <tr>
+      <td>Assam</td>
+      <td>Guwahati</td>
+      <td>Gauhati Medical College</td>
+    </tr>
+    <tr>
+      <td>Assam</td>
+      <td>Jorhat</td>
+      <td>Jorhat Medical College</td>
+    </tr>
+    <tr>
+      <td>Assam</td>
+      <td>Silchar</td>
+      <td>Silchar Medical College</td>
+    </tr>
+    <tr>
+      <td>Assam</td>
+      <td>Tezpur</td>
+      <td>TEZPUR MEDICAL COLLEGE &amp; HOSPITAL</td>
+    </tr>
+    <tr>
+      <td>Bihar</td>
+      <td>Darbhanga</td>
+      <td>Darbhanga Medical College</td>
+    </tr>
+    <tr>
+      <td>Bihar</td>
+      <td>Patna</td>
+      <td>Indira Gandhi Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Bihar</td>
+      <td>Patna</td>
+      <td>Rajendra Memorial Research Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Chandigarh</td>
+      <td>Chandigarh</td>
+      <td>Post Graduate Institute of Medical Education &amp; Research</td>
+    </tr>
+    <tr>
+      <td>Chandigarh</td>
+      <td>Chandigarh</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Chhattisgarh</td>
+      <td>Raipur</td>
+      <td>All India Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Chhattisgarh</td>
+      <td>Jagdalpur</td>
+      <td>Late Baliram Kashyap M Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Delhi</td>
+      <td>Delhi</td>
+      <td>All India Institute Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Delhi</td>
+      <td>Delhi</td>
+      <td>Lady Hardinge Medical College</td>
+    </tr>
+    <tr>
+      <td>Delhi</td>
+      <td>Delhi</td>
+      <td>National Centre for Disease Control</td>
+    </tr>
+    <tr>
+      <td>Delhi</td>
+      <td>Delhi</td>
+      <td>Atal Bihari Vajpayee Institute of Medical Sciences and Ram Manohar Lohia Hospital</td>
+    </tr>
+    <tr>
+      <td>Delhi</td>
+      <td>Delhi</td>
+      <td>Institute of Liver &amp; Biliary Sciences</td>
+    </tr>
+    <tr>
+      <td>Delhi</td>
+      <td>Delhi</td>
+      <td>Army Hospital Research &amp; Referral</td>
+    </tr>
+    <tr>
+      <td>Goa</td>
+      <td>Bambolim</td>
+      <td>Goa Medical College</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td>Bhavnagar</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td>Jamnagar</td>
+      <td>MP Shah Govt Medical College</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td>Rajkot</td>
+      <td>Govt Medical College, Rajkot</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td>Surat</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td>Vadodara</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td>Rajkot</td>
+      <td>Government</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td>Ahmedabad</td>
+      <td>B J medical college</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td>Surat</td>
+      <td>SMIMER Hospital &amp; Medical College</td>
+    </tr>
+    <tr>
+      <td>Haryana</td>
+      <td>Rohtak</td>
+      <td>Pt. B.D. Sharma Post Graduate Inst. of Med. Sciences</td>
+    </tr>
+    <tr>
+      <td>Haryana</td>
+      <td>Sonepat</td>
+      <td>BPS Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Haryana</td>
+      <td>Faridabad</td>
+      <td>ESIC Medical College and Hospital</td>
+    </tr>
+    <tr>
+      <td>Himachal Pradesh</td>
+      <td>Kangra</td>
+      <td>Dr. Rajendra Prasad Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Himachal Pradesh</td>
+      <td>Shimla</td>
+      <td>Indira Gandhi Medical College &amp; Hospital</td>
+    </tr>
+    <tr>
+      <td>Jammu &amp; Kashmir</td>
+      <td>Jammu</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Jammu &amp; Kashmir</td>
+      <td>Srinagar</td>
+      <td>Sher-i-Kashmir Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Jammu &amp; Kashmir</td>
+      <td>Srinagar</td>
+      <td>Government Medical College</td>
+    </tr>
+    <tr>
+      <td>Jammu &amp; Kashmir</td>
+      <td>Udhampur</td>
+      <td>Command Hospital (NC)</td>
+    </tr>
+    <tr>
+      <td>Jharkhand</td>
+      <td>Jamshedpur</td>
+      <td>MGM Medical College &amp; Hospital</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Bangalore</td>
+      <td>Rajiv Gandhi Institute For Chest Disease</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Bangalore</td>
+      <td>Anand Diagnostic Laboratory Banashankari</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Bangalore</td>
+      <td>Bangalore Medical College &amp; Research Institute</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Bangalore</td>
+      <td>Command Hospital (Air Force)</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Bangalore</td>
+      <td>National Institute of Mental Health &amp; Neurosciences</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Gulbarga</td>
+      <td>Gulbarga Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Hassan</td>
+      <td>Hassan Inst. of Med. Sciences</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Mangalore</td>
+      <td>Wenlock District Hospital</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Mysore</td>
+      <td>Mysore Medical College &amp; Research Institute</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Shimoga</td>
+      <td>Shimoga Instt. of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td>Bangalore</td>
+      <td>Sakra World Hospital Lab Services</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td>Alappuzha</td>
+      <td>National Institute Of Virology</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td>Kottayam</td>
+      <td>Inter University</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td>Kozhikode</td>
+      <td>Govt. Medical College, Kozhikode</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td>Thiruvananthapuram</td>
+      <td>Sree Chitra Tirunal Institute Of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td>Thiruvananthapuram</td>
+      <td>Rajiv Gandhi Center For Biotechnology</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td>Thiruvananthapuram</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td>Thiruvananthapuram</td>
+      <td>State Public Health Laboratory</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td>Thrissur</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Bhopal</td>
+      <td>All India Institute of Medical Sciences, Bhopal</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Bhopal</td>
+      <td>Gandhi Medical College</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Gwalior</td>
+      <td>Defense Research Development Establishment</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Indore</td>
+      <td>Mahatma Gandhi Memorial Medical College</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Jabalpur</td>
+      <td>National Institute for Research on Tribal Health</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Bhopal</td>
+      <td>All India Institute of Medical Sciences (AIIMS), Bhopal</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Bhopal</td>
+      <td>Gandhi Medical College, Bhopal</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Bhopal</td>
+      <td>Bhopal Memorial Hospital &amp; Research Centre, Bhopal</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Indore</td>
+      <td>Mahatma Gandhi Memorial Medical College, Indore</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Jabalpur</td>
+      <td>National Institute for Research in Tribal Health, Jabalpur</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Gwalior</td>
+      <td>Gajra Raja Medical College, Gwalior</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td>Gwalior</td>
+      <td>Defence Research &amp; Development Establishment (DRDE), Gwalior</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Aurangabad</td>
+      <td>Government Medical College</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Dhule</td>
+      <td>Shree Bhausaheb Hire Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Miraj</td>
+      <td>Government Medical College</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Mumbai</td>
+      <td>Kasturba Hospital for Infectious Diseases</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Mumbai</td>
+      <td>Grant Medical College &amp; Sir JJ Hospital</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Mumbai</td>
+      <td>Haffkine Institute</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Nagpur</td>
+      <td>Indira Gandhi Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Nagpur</td>
+      <td>Indira Gandhi Government Medical College &amp; Hospital</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Pune</td>
+      <td>BJ Medical College</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Pune</td>
+      <td>Armed Forces Medical College</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Pune</td>
+      <td>National Institute of Virology</td>
+    </tr>
+    <tr>
+      <td>Maharashtra</td>
+      <td>Solapur</td>
+      <td>V. M. Government Medical College</td>
+    </tr>
+    <tr>
+      <td>Manipur</td>
+      <td>Imphal</td>
+      <td>Regional Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Manipur</td>
+      <td>Imphal</td>
+      <td>Jawaharlal Nehru Institute of Med. Sciences, Imphal-East</td>
+    </tr>
+    <tr>
+      <td>Meghalaya</td>
+      <td>Shillong</td>
+      <td>North Eastern Indira Gandhi Regional Institute of Health &amp; Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Odisha</td>
+      <td>Bhubaneswar</td>
+      <td>Regional Medical Research Centre</td>
+    </tr>
+    <tr>
+      <td>Odisha</td>
+      <td>Bhubaneswar</td>
+      <td>All India Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Puducherry</td>
+      <td>Puducherry</td>
+      <td>Jawaharlal Institute of Postgraduate Medical Education &amp; Research, Puducherry</td>
+    </tr>
+    <tr>
+      <td>Punjab</td>
+      <td>Amritsar</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Punjab</td>
+      <td>Patiala</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Allahabad</td>
+      <td>Swaroop Rani Nehru Hospital</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Noida</td>
+      <td>National Institute of Biologicals, Noida</td>
+    </tr>
+    <tr>
+      <td>West Bengal</td>
+      <td>Alipurduar</td>
+      <td>Coochbehar Medical College</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td>Ajmer</td>
+      <td>JLN Medical College</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td>Bikaner</td>
+      <td>SP Medical College</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td>Jaipur</td>
+      <td>Sawai Man Singh Medical College</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td>Jhalawar</td>
+      <td>Jhalawar Medical College</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td>Jodhpur</td>
+      <td>All India Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td>Jodhpur</td>
+      <td>Dr. Sampurnanand Medical College</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td>Kota</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td>Udaipur</td>
+      <td>RNT Medical College</td>
+    </tr>
+    <tr>
+      <td>Sikkim</td>
+      <td>Gangtok</td>
+      <td>Sir Thutob Namgyal Memorial (STNM)</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Chennai</td>
+      <td>Madras Medical College</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Chennai</td>
+      <td>King Institute of Preventive Medicine &amp; Research</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Chennai</td>
+      <td>Stanley Medical College</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Coimbatore</td>
+      <td>Microbiological Laboratory</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Coimbatore</td>
+      <td>Coimbatore Medical College</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Madurai</td>
+      <td>Madurai Medical College</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Salem</td>
+      <td>Kumar Mangalam Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Theni</td>
+      <td>Govt. Theni Medical College</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Thiruvarur</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Tiruchirappalli</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Tirunelveli</td>
+      <td>Tirunelveli Medical College, Tirunelveli</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td>Villupuram</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Telangana</td>
+      <td>Secunderabad</td>
+      <td>Gandhi Medical College</td>
+    </tr>
+    <tr>
+      <td>Telangana</td>
+      <td>Hyderabad</td>
+      <td>Osmania Medical College</td>
+    </tr>
+    <tr>
+      <td>Telangana</td>
+      <td>Hyderabad</td>
+      <td>Sir Ronald Ross Institute of Tropical &amp; Communicable Diseases</td>
+    </tr>
+    <tr>
+      <td>Telangana</td>
+      <td>Hyderabad</td>
+      <td>Nizam’s Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>Telangana</td>
+      <td>Hyderabad</td>
+      <td>Institute of Preventive Medicine</td>
+    </tr>
+    <tr>
+      <td>Telangana</td>
+      <td>Hyderabad</td>
+      <td>Centre for Cellular &amp; Molecular Biology</td>
+    </tr>
+    <tr>
+      <td>Tripura</td>
+      <td>Agartala</td>
+      <td>Government Medical College</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Aligarh</td>
+      <td>Jawaharlal Nehru Medical College</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Aligarh</td>
+      <td>Jawaharlal Nehru Medical College</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Gorakhpur</td>
+      <td>Regional Medical Research Centre</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Lucknow</td>
+      <td>Command Hospital</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Lucknow</td>
+      <td>King George Medical University</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Lucknow</td>
+      <td>Sanjay Gandhi Post Graduate Institute</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Meerut</td>
+      <td>Lala Lajpat Rai Memorial Medical College</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Saifai</td>
+      <td>Uttar Pradesh RIMS</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Varanasi</td>
+      <td>Institute of Medical Sciences, Banaras Hindu University</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td>Varanasi</td>
+      <td>Institute of Medical Sciences, Banaras Hindu University</td>
+    </tr>
+    <tr>
+      <td>Uttarakhand</td>
+      <td>Haldwani</td>
+      <td>Govt. Medical College</td>
+    </tr>
+    <tr>
+      <td>Uttarakhand</td>
+      <td>Rishikesh</td>
+      <td>All India Institute of Medical Sciences</td>
+    </tr>
+    <tr>
+      <td>West Bengal</td>
+      <td>Siliguri</td>
+      <td>North Bengal Medical College</td>
+    </tr>
+    <tr>
+      <td>West Bengal</td>
+      <td>Kolkata</td>
+      <td>Institute of Post Graduate Medical Education &amp; Research</td>
+    </tr>
+    <tr>
+      <td>West Bengal</td>
+      <td>Kolkata</td>
+      <td>National Institute of Cholera &amp; Enteric Diseases</td>
+    </tr>
+    <tr>
+      <td>West Bengal</td>
+      <td>Kolkata</td>
+      <td>Chittaranjan National Cancer Institute</td>
+    </tr>
+    <tr>
+      <td>West Bengal</td>
+      <td>Midnapore</td>
+      <td>Midnapore Medical College</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<script>
+  const search = () =>{
+    let filter = document.getElementById('resources_search').value.toUpperCase();
+    let resources_table = document.getElementById('resources_table');
+    let tr = resources_table.getElementsByTagName('tr');
+    for(var i=0; i<tr.length; i++){
+      let td = tr[i].getElementsByTagName('td')[0];
+      if(td){
+        let textvalue = td.textContent || td.innerHTML;
+        if(textvalue.toUpperCase().indexOf(filter) > -1){
+          tr[i].style.display = "";
+        }
+        else{
+          tr[i].style.display = "none";
+        }
+        }
+      }
+    }
+</script>
+
+<br>
+
+<footer class="py-3">
+    <div class="sticky-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <p class="m-0 text-center text-dark">
+                    Copyright <i class="fa fa-copyright"></i> 2020. Made with <i class="fa fa-heart"></i> by <a href="https://github.com/sudo-rajarshi" target="_blank" rel="noopener">Rajarshi Bhadra</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
