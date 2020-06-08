@@ -1790,20 +1790,3 @@ data = intro + ICMR_intro + ICMR_chart + daily_intro + line_chart_total + footer
 
 with open ('trendAnalysis.htm', 'w') as fp: 
     fp.write(data) 
-    
-    
-# In[63]:
-
-
-ftp = ftplib.FTP('ftpupload.net')
-ftp.login('epiz_25611672','u1bLP9TbFm')
-ftp.cwd('htdocs')
-
-file1 = open('index.htm','rb')
-file2 = open('trendAnalysis.htm','rb')
-
-ftp.storlines('STOR index.htm', file1)
-ftp.storlines('STOR trendAnalysis.htm', file2)
-
-file1.close() 
-file2.close() 
