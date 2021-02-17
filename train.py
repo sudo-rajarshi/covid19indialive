@@ -129,8 +129,8 @@ with tf.device('/CPU:0'):
     det_loss = []
 
     iterations = 3
-    epoch = 1
-    patience = 5000
+    epoch = 10000
+    patience = 2000
 
     i = 0
     for i in range(iterations):
