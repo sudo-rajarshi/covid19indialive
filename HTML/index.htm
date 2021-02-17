@@ -1,0 +1,929 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168253703-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-168253703-1');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.77, shrink-to-fit=yes">
+    <meta name="Description" content="Insights and Future Prediction of Covid-19 Pandemic in India. Get Detailed Analysis of the spread of the virus in India.">
+    <meta name="keywords" content="coronavirus, corona, covid, covid19, covid-19, covidindia, covid-19 india, covid-19 india tracker, india, virus, pandemic, world">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="cf-2fa-verify" content="e85e8a45e5ef19b">
+    <title>Insights of Covid-19 in India</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+        *{font-family: 'Roboto Slab', serif}
+    </style>
+</head>
+<body>
+
+<nav class="navbar bg-light navbar-expand-sm navbar-light sticky-top">
+    <a class="navbar-brand" href="index""><b>Insights of Covid-19</b> <i class="fas fa-virus"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index"><b>Home <i class="fas fa-home"></i></b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="trendAnalysis"><b>Trend Analysis</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="helpfulResources"><b>Helpful Resources</b></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="text-center">
+    <br>
+    <h1 class="text-center"><b>Insights of Covid-19 Pandemic in India</b></h1>
+    <p class="text-center">
+        Live information about Novel Corona Virus spread in India
+        <br>
+        Check out the <a href="https://telegra.ph/Data-Sources-for-Covidtracker-indiaml-04-05" target="_blank" rel="noopener">data sources</a> for this website
+    </p>
+    
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col mb-3">
+            <script src="https://www.gstatic.com/charts/loader.js"></script>
+                <script>
+                google.charts.load('current', {
+                    'packages':['geochart'],
+                    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+                });
+                google.charts.setOnLoadCallback(drawRegionsMap);
+
+                function drawRegionsMap() {
+                    var data = google.visualization.arrayToDataTable([['State', 'Confirmed Cases', 'Recovered Cases'], ['Maharashtra', 2071306, 1981408], ['Karnataka', 946076, 927924], ['Andhra Pradesh', 888959, 881181], ['Tamil Nadu', 846026, 829388], ['Kerala', 1011957, 946910], ['Delhi', 637181, 625268], ['Uttar Pradesh', 602353, 590787], ['West Bengal', 572879, 558790], ['Orissa', 336397, 333700], ['Rajasthan', 319065, 315027], ['Telangana', 296943, 293698], ['Chhattisgarh', 309623, 302935], ['Haryana', 269240, 265381], ['Bihar', 261841, 259748], ['Gujarat', 265756, 259655], ['Madhya Pradesh', 258082, 252385], ['Assam', 217309, 214615], ['Punjab', 176767, 168654], ['Jammu and Kashmir', 125463, 122883], ['Jharkhand', 119394, 117850], ['IN-UT', 96920, 93256], ['Himachal Pradesh', 58262, 56898], ['Goa', 54323, 53035], ['Puducherry', 39488, 38617], ['Tripura', 33350, 32937], ['Manipur', 29213, 28757], ['Chandigarh', 21267, 20788], ['Arunachal Pradesh', 16833, 16774], ['Meghalaya', 13944, 13696], ['Nagaland', 12190, 11908], ['Ladakh', 9779, 9601], ['Sikkim', 6121, 5834], ['Andaman and Nicobar Islands', 5013, 4943], ['Mizoram', 4396, 4368], ['Dadra and Nagar Haveli and Daman and Diu', 3382, 3349], ['Lakshadweep', 251, 155]]);
+
+                    var options = {
+                        region: 'IN',
+                        displayMode: 'regions',
+                        resolution: 'provinces',
+                        datalessRegionColor: '#ffffff'
+                    };
+
+                    var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
+                    chart.draw(data, options);
+                };
+                </script>
+            <div id="geochart-colors" align="center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-lg-2 col mb-3">
+            <div class="card border-0">
+                    <div class="text-primary">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h6 class="card-title"><b>Total <br> Confirmed</b></h6>
+                            <h4 class="card-text"><b>10937349</b></h4>
+                            <h6 class="card-text"> +224</h6>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col mb-3">
+            <div class="card border-0">
+                    <div class="text-success">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h6 class="card-title"><b>Total <br> Recovered</b></h6>
+                            <h4 class="card-text"><b>10643103</b></h4>
+                            <h6 class="card-text"> +150</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col mb-3">
+            <div class="card border-0">
+                    <div class="text-dark">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h6 class="card-title"><b>Total <br> Deceased</b></h6>
+                            <h4 class="card-text"><b>155950</b></h4>
+                            <h6 class="card-text"> +1</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col mb-3">
+            <div class="card border-0">
+                    <div class="text-primary">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h6 class="card-title"><b>Confirmation <br> Rate</b></h6>
+                            <h4 class="card-text"><b>5%</b></h4>
+                            <a data-toggle="tooltip" data-placement="bottom" title='Out of 100 tests 5 people have tested positive'>
+                                <i class="fas fa-question-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col mb-3">
+            <div class="card border-0">
+                    <div class="text-success">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h6 class="card-title"><b>Recovery <br> Rate</b></h6>
+                            <h4 class="card-text"><b>97%</b></h4>
+                            <a data-toggle="tooltip" data-placement="top" title='Out of 100 confirmed cases 97 people have recovered'>
+                                <i class="fas fa-question-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-2 col mb-3">
+            <div class="card border-0">
+                    <div class="text-dark">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h6 class="card-title"><b>Mortality <br> Rate</b></h6>
+                            <h4 class="card-text"><b>1%</b></h4>
+                            <a data-toggle="tooltip" data-placement="bottom" title='Out of 100 confirmed cases 1 people have died'>
+                                <i class="fas fa-question-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+
+        <script>
+            $('a[data-toggle="tooltip"]').tooltip({
+                animated: 'fade',
+                trigger: 'click'
+            });
+        </script>
+
+        <div class="text-center">
+            <a href="trendAnalysis" class="btn btn-warning" role="button" aria-pressed="true">
+                <i class="text-center fas fa-chart-line fa-1x"></i> Trend of the Spread <i class="fas fa-external-link-square-alt"></i>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<br>
+
+<h4 class="text-center">
+    <b>Spread per million people</b>
+</h4>
+
+<p class="text-center">
+    Testing, confirmations, recoveries and deaths per million people
+</p>
+
+        
+<div class="container">
+    <div class="row justify-content-center">
+    
+        <div class="col-lg-6 col mb-3">
+            <div class="card bg-info border-0">
+                <div class="text-white">
+                    <div class="card-body">
+                        <div class="text-left">
+                            <h5 class="card-title"><b>Samples Testing</b></h5>
+                            <p class="card-text">Out of 1 million people <b>153761</b> people have been tested</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col mb-3">
+            <div class="card bg-primary border-0">
+                <div class="text-white">
+                    <div class="card-body">
+                        <div class="text-left">
+                            <h5 class="card-title"><b>Confirmations</b></h5>
+                            <p class="card-text">Out of 153761 tests <b>8085</b> people have been tested positive</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+        
+<div class="container">
+    <div class="row justify-content-center">
+    
+        <div class="col-lg-6 col mb-3">
+            <div class="card bg-success border-0">
+                <div class="text-white">
+                    <div class="card-body">
+                        <div class="text-left">
+                            <h5 class="card-title"><b>Recoveries</b></h5>
+                            <p class="card-text">Out of 8085 positive cases <b>7866</b> people have been recovered</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 col mb-3">
+            <div class="card bg-dark border-0">
+                <div class="text-white">
+                    <div class="card-body">
+                        <div class="text-left">
+                            <h5 class="card-title"><b>Deaths</b></h5>
+                            <p class="card-text">Out of 8085 positive cases <b>113</b> people have been deceased</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+    
+        <div class="col-lg-8 col mb-3">
+            <div class="card border-0">
+                <div class="text-dark">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <h4 class="card-title"><b>Detailed Analysis of Different States</b></h4>
+                            <p class="card-text">Get detailed analytics of confirmations, recoveries and deaths across different states</p>
+                            <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#state" aria-expanded="false" aria-controls="state">
+                                State Data <i class="fas fa-chevron-circle-down fa-1x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="collapse" id="state">
+
+    <div class="text-center">
+    <input type="text" name="" id="state_data_search" placeholder=" Search by State" onkeyup="search()">
+    </div>
+    <br>
+
+<div class="container mb-3">
+<div class="table-responsive">
+<table border="0" class="table table-striped table-bordered table-sm text-left <table border="0" class="dataframe" align="left" id="state_data_table">
+  <thead class="thead-dark">
+    <tr style="text-align: left;">
+      <th>State</th>
+      <th>Confirmed</th>
+      <th>Active</th>
+      <th>Recovered</th>
+      <th>Deaths</th>
+      <th>Recovery(%)</th>
+      <th>Death(%)</th>
+      <th>Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maharashtra</td>
+      <td><b>2071306</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>38307</td>
+      <td><b>1981408</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>51591</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>95.7</td>
+      <td>2.5</td>
+      <td>16/02/2021 20:39:24</td>
+    </tr>
+    <tr>
+      <td>Karnataka</td>
+      <td><b>946076</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>5879</td>
+      <td><b>927924</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>12273</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.1</td>
+      <td>1.3</td>
+      <td>16/02/2021 19:59:25</td>
+    </tr>
+    <tr>
+      <td>Andhra Pradesh</td>
+      <td><b>888959</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>615</td>
+      <td><b>881181</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>7163</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>99.1</td>
+      <td>0.8</td>
+      <td>16/02/2021 19:44:26</td>
+    </tr>
+    <tr>
+      <td>Tamil Nadu</td>
+      <td><b>846026</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>4206</td>
+      <td><b>829388</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>12432</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.0</td>
+      <td>1.5</td>
+      <td>16/02/2021 20:58:43</td>
+    </tr>
+    <tr>
+      <td>Kerala</td>
+      <td><b>1011957</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>61030</td>
+      <td><b>946910</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>4017</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>93.6</td>
+      <td>0.4</td>
+      <td>16/02/2021 19:14:28</td>
+    </tr>
+    <tr>
+      <td>Delhi</td>
+      <td><b>637181</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>1019</td>
+      <td><b>625268</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>10894</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.1</td>
+      <td>1.7</td>
+      <td>16/02/2021 18:24:24</td>
+    </tr>
+    <tr>
+      <td>Uttar Pradesh</td>
+      <td><b>602353</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>2862</td>
+      <td><b>590787</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>8704</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.1</td>
+      <td>1.4</td>
+      <td>16/02/2021 19:14:29</td>
+    </tr>
+    <tr>
+      <td>West Bengal</td>
+      <td><b>572879</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>3854</td>
+      <td><b>558790</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>10235</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.5</td>
+      <td>1.8</td>
+      <td>16/02/2021 20:58:46</td>
+    </tr>
+    <tr>
+      <td>Odisha</td>
+      <td><b>336397</b> <br><i class="fas fa-arrow-up"></i> 75</td>
+      <td>732</td>
+      <td><b>333700</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>1965</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>99.2</td>
+      <td>0.6</td>
+      <td>17/02/2021 12:34:22</td>
+    </tr>
+    <tr>
+      <td>Rajasthan</td>
+      <td><b>319065</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>1257</td>
+      <td><b>315027</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>2781</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.7</td>
+      <td>0.9</td>
+      <td>16/02/2021 20:16:27</td>
+    </tr>
+    <tr>
+      <td>Telangana</td>
+      <td><b>296943</b> <br><i class="fas fa-arrow-up"></i> 148</td>
+      <td>1625</td>
+      <td><b>293698</b> <br><i class="fas fa-arrow-up"></i> 150</td>
+      <td><b>1620</b> <br><i class="fas fa-arrow-up"></i> 1</td>
+      <td>98.9</td>
+      <td>0.5</td>
+      <td>17/02/2021 11:24:24</td>
+    </tr>
+    <tr>
+      <td>Chhattisgarh</td>
+      <td><b>309623</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>2905</td>
+      <td><b>302935</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>3783</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.8</td>
+      <td>1.2</td>
+      <td>16/02/2021 22:47:25</td>
+    </tr>
+    <tr>
+      <td>Haryana</td>
+      <td><b>269240</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>819</td>
+      <td><b>265381</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>3040</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.6</td>
+      <td>1.1</td>
+      <td>16/02/2021 20:16:29</td>
+    </tr>
+    <tr>
+      <td>Bihar</td>
+      <td><b>261841</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>565</td>
+      <td><b>259748</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>1528</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>99.2</td>
+      <td>0.6</td>
+      <td>16/02/2021 20:28:29</td>
+    </tr>
+    <tr>
+      <td>Gujarat</td>
+      <td><b>265756</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>1699</td>
+      <td><b>259655</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>4402</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.7</td>
+      <td>1.7</td>
+      <td>16/02/2021 20:58:50</td>
+    </tr>
+    <tr>
+      <td>Madhya Pradesh</td>
+      <td><b>258082</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>1856</td>
+      <td><b>252385</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>3841</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.8</td>
+      <td>1.5</td>
+      <td>16/02/2021 21:31:26</td>
+    </tr>
+    <tr>
+      <td>Assam</td>
+      <td><b>217309</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>1605</td>
+      <td><b>214615</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>1089</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.8</td>
+      <td>0.5</td>
+      <td>16/02/2021 23:58:27</td>
+    </tr>
+    <tr>
+      <td>Punjab</td>
+      <td><b>176767</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>2401</td>
+      <td><b>168654</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>5712</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>95.4</td>
+      <td>3.2</td>
+      <td>17/02/2021 00:22:26</td>
+    </tr>
+    <tr>
+      <td>Jammu and Kashmir</td>
+      <td><b>125463</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>629</td>
+      <td><b>122883</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>1951</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.9</td>
+      <td>1.6</td>
+      <td>16/02/2021 19:14:33</td>
+    </tr>
+    <tr>
+      <td>Jharkhand</td>
+      <td><b>119394</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>460</td>
+      <td><b>117850</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>1084</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.7</td>
+      <td>0.9</td>
+      <td>16/02/2021 22:47:27</td>
+    </tr>
+    <tr>
+      <td>Uttarakhand</td>
+      <td><b>96920</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>1982</td>
+      <td><b>93256</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>1682</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>96.2</td>
+      <td>1.7</td>
+      <td>16/02/2021 22:05:33</td>
+    </tr>
+    <tr>
+      <td>Himachal Pradesh</td>
+      <td><b>58262</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>383</td>
+      <td><b>56898</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>981</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.7</td>
+      <td>1.7</td>
+      <td>17/02/2021 09:39:24</td>
+    </tr>
+    <tr>
+      <td>Goa</td>
+      <td><b>54323</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>504</td>
+      <td><b>53035</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>784</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.6</td>
+      <td>1.4</td>
+      <td>16/02/2021 19:20:26</td>
+    </tr>
+    <tr>
+      <td>Puducherry</td>
+      <td><b>39488</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>213</td>
+      <td><b>38617</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>658</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.8</td>
+      <td>1.7</td>
+      <td>16/02/2021 20:16:34</td>
+    </tr>
+    <tr>
+      <td>Tripura</td>
+      <td><b>33350</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>25</td>
+      <td><b>32937</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>388</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.8</td>
+      <td>1.2</td>
+      <td>14/02/2021 13:30:31</td>
+    </tr>
+    <tr>
+      <td>Manipur</td>
+      <td><b>29213</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>83</td>
+      <td><b>28757</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>373</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.4</td>
+      <td>1.3</td>
+      <td>16/02/2021 20:58:55</td>
+    </tr>
+    <tr>
+      <td>Chandigarh</td>
+      <td><b>21267</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>133</td>
+      <td><b>20788</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>346</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.7</td>
+      <td>1.6</td>
+      <td>16/02/2021 19:59:32</td>
+    </tr>
+    <tr>
+      <td>Arunachal Pradesh</td>
+      <td><b>16833</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>3</td>
+      <td><b>16774</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>56</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>99.6</td>
+      <td>0.3</td>
+      <td>14/02/2021 22:36:30</td>
+    </tr>
+    <tr>
+      <td>Meghalaya</td>
+      <td><b>13944</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>100</td>
+      <td><b>13696</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>148</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.2</td>
+      <td>1.1</td>
+      <td>16/02/2021 20:16:37</td>
+    </tr>
+    <tr>
+      <td>Nagaland</td>
+      <td><b>12190</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>192</td>
+      <td><b>11908</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>90</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>97.7</td>
+      <td>0.7</td>
+      <td>16/02/2021 18:24:26</td>
+    </tr>
+    <tr>
+      <td>Ladakh</td>
+      <td><b>9779</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>48</td>
+      <td><b>9601</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>130</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.2</td>
+      <td>1.3</td>
+      <td>16/02/2021 00:28:26</td>
+    </tr>
+    <tr>
+      <td>Sikkim</td>
+      <td><b>6121</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>152</td>
+      <td><b>5834</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>135</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>95.3</td>
+      <td>2.2</td>
+      <td>16/02/2021 22:05:36</td>
+    </tr>
+    <tr>
+      <td>Andaman and Nicobar Islands</td>
+      <td><b>5013</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>8</td>
+      <td><b>4943</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>62</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>98.6</td>
+      <td>1.2</td>
+      <td>16/02/2021 23:58:30</td>
+    </tr>
+    <tr>
+      <td>Mizoram</td>
+      <td><b>4396</b> <br><i class="fas fa-arrow-up"></i> 1</td>
+      <td>18</td>
+      <td><b>4368</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>10</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>99.4</td>
+      <td>0.2</td>
+      <td>17/02/2021 09:39:25</td>
+    </tr>
+    <tr>
+      <td>Dadra and Nagar Haveli and Daman and Diu</td>
+      <td><b>3382</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>31</td>
+      <td><b>3349</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>2</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>99.0</td>
+      <td>0.1</td>
+      <td>17/02/2021 09:21:35</td>
+    </tr>
+    <tr>
+      <td>Lakshadweep</td>
+      <td><b>251</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>96</td>
+      <td><b>155</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td><b>0</b> <br><i class="fas fa-arrow-up"></i> 0</td>
+      <td>61.8</td>
+      <td>0.0</td>
+      <td>16/02/2021 20:39:32</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<script>
+    const search = () =>{
+        let filter = document.getElementById('state_data_search').value.toUpperCase();
+        let resources_table = document.getElementById('state_data_table');
+        let tr = resources_table.getElementsByTagName('tr');
+        for(var i=0; i<tr.length; i++){
+        let td = tr[i].getElementsByTagName('td')[0];
+        if(td){
+            let textvalue = td.textContent || td.innerHTML;
+            if(textvalue.toUpperCase().indexOf(filter) > -1){
+            tr[i].style.display = "";
+            }
+            else{
+            tr[i].style.display = "none";
+            }
+            }
+        }
+    }
+</script>
+
+</div>
+
+<h4 class="text-center">
+    <b>Predictions of 17-02-2021 using AI</b>
+</h4>
+
+<p class='text-center'>
+    The following predictions are made by considering the current situation doesnot change with respect to time.
+</p>
+
+<div class="container">
+    <div class="row justify-content-center">
+    
+        <div class="col-lg-3 col mb-3">
+            <div class="card bg-primary border-0">
+                <div class="text-white">
+                    <div class="card-header">Today's Predictions</div>
+                    <div class="card-body">
+                    <h4 class="card-title"><b>Confirmation</b></h4>
+                    <p class="card-text">10905579 to 11069983</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col mb-3">
+            <div class="card bg-danger border-0">
+                <div class="text-white">
+                    <div class="card-header">Today's Predictions</div>
+                    <div class="card-body">             
+                    <h4 class="card-title"><b>Active</b></h4>
+                    <p class="card-text">145917 to 148116</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col mb-3">
+            <div class="card bg-success border-0">
+                <div class="text-white">
+                    <div class="card-header">Today's Predictions</div>
+                    <div class="card-body">             
+                    <h4 class="card-title"><b>Recovery</b></h4>
+                    <p class="card-text">10551610 to 10764772</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col mb-3">
+            <div class="card bg-dark border-0">
+                <div class="text-white">
+                    <div class="card-header">Today's Predictions</div>
+                    <div class="card-body">
+                    <h4 class="card-title"><b>Death</b></h4>
+                    <p class="card-text">154762 to 157094</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center">
+    
+        <div class="col-lg-8 col mb-3">
+            <div class="card border-0">
+                <div class="text-dark">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <p class="card-text">Get detailed Predictions of confirmations, recoveries and deaths for next 14 days</p>
+                            <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#pred" aria-expanded="false" aria-controls="pred">
+                                Predictions of each day for next 14 days <i class="fas fa-chevron-circle-down fa-1x"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="collapse" id="pred">
+<div class="container mb-3">
+<div class="table-responsive">
+<table border="0" class="table table-striped table-bordered table-sm text-left <table border="0" class="dataframe" align="left">
+  <thead class="thead-dark">
+    <tr style="text-align: left;">
+      <th>Day</th>
+      <th>Confirmations</th>
+      <th>Active</th>
+      <th>Recoveries</th>
+      <th>Deaths</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tomorrow</td>
+      <td>10910816 to 11146403</td>
+      <td>225957 to 152746</td>
+      <td>10530630 to 10836086</td>
+      <td>155271 to 158612</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>10922004 to 11226426</td>
+      <td>252203 to 157601</td>
+      <td>10516240 to 10910945</td>
+      <td>156097 to 160415</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>10944210 to 11295132</td>
+      <td>270559 to 161507</td>
+      <td>10520803 to 10975797</td>
+      <td>157315 to 162293</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>10972571 to 11359881</td>
+      <td>285421 to 165061</td>
+      <td>10535067 to 11037240</td>
+      <td>158777 to 164272</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>11006161 to 11420415</td>
+      <td>296983 to 168250</td>
+      <td>10557892 to 11094999</td>
+      <td>160437 to 166314</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>11043471 to 11478307</td>
+      <td>306335 to 171205</td>
+      <td>10586673 to 11150468</td>
+      <td>162241 to 168410</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>11083641 to 11534173</td>
+      <td>313988 to 173980</td>
+      <td>10620031 to 11204181</td>
+      <td>164155 to 170546</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>11125958 to 11588639</td>
+      <td>320411 to 176627</td>
+      <td>10656783 to 11256687</td>
+      <td>166152 to 172715</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>11169919 to 11642112</td>
+      <td>325922 to 179181</td>
+      <td>10696104 to 11308345</td>
+      <td>168213 to 174911</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>11215146 to 11694911</td>
+      <td>330765 to 181669</td>
+      <td>10737370 to 11359433</td>
+      <td>170324 to 177129</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>11261362 to 11747267</td>
+      <td>335117 to 184111</td>
+      <td>10780125 to 11410154</td>
+      <td>172474 to 179366</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>11308361 to 11799353</td>
+      <td>339110 to 186522</td>
+      <td>10824031 to 11460658</td>
+      <td>174655 to 181619</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>11355994 to 11851295</td>
+      <td>342841 to 188912</td>
+      <td>10868838 to 11511056</td>
+      <td>176862 to 183887</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>11404148 to 11903188</td>
+      <td>346381 to 191289</td>
+      <td>10914364 to 11561431</td>
+      <td>179090 to 186168</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+<footer class="py-3">
+    <div class="sticky-bottom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <p class="m-0 text-center text-dark">
+                    Copyright <i class="fa fa-copyright"></i> 2020. Made with <i class="fa fa-heart"></i> by <a href="https://github.com/sudo-rajarshi" target="_blank" rel="noopener">Rajarshi Bhadra</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1734,18 +1734,18 @@ with open (os.path.join(dir_path, 'HTML', 'trendAnalysis.htm'), 'w') as fp:
     
 date_time_exe = now.strftime("%H:%M:%S")
 
-ftp = ftplib.FTP('ftpupload.net')
-ftp.login('epiz_25611672','u1bLP9TbFm')
-ftp.cwd('htdocs')
+# ftp = ftplib.FTP('ftpupload.net')
+# ftp.login('*****','*****')
+# ftp.cwd('htdocs')
 
-file1 = open(os.path.join(dir_path, 'HTML', 'index.htm'),'rb')
-file2 = open(os.path.join(dir_path, 'HTML', 'trendAnalysis.htm'),'rb')
+# file1 = open(os.path.join(dir_path, 'HTML', 'index.htm'),'rb')
+# file2 = open(os.path.join(dir_path, 'HTML', 'trendAnalysis.htm'),'rb')
 
-ftp.storlines('STOR index.htm', file1)
-ftp.storlines('STOR trendAnalysis.htm', file2)
+# ftp.storlines('STOR index.htm', file1)
+# ftp.storlines('STOR trendAnalysis.htm', file2)
 
-file1.close()
-file2.close()
+# file1.close()
+# file2.close()
 
 date_time_upload = now.strftime("%H:%M:%S")
 
