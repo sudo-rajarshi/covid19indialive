@@ -1,14 +1,14 @@
 ,State,Confirmed,Active,Recovered,Deaths,Recovery(%),Death(%),Updated
-0,Maharashtra,"<b>2112312</b> <br><i class=""fas fa-arrow-up""></i> 6218",54604,"<b>2005851</b> <br><i class=""fas fa-arrow-up""></i> 5869","<b>51857</b> <br><i class=""fas fa-arrow-up""></i> 51",95.0,2.5,23/02/2021 19:43:24
+0,Maharashtra,"<b>2112312</b> <br><i class=""fas fa-arrow-up""></i> 6218",54604,"<b>2005851</b> <br><i class=""fas fa-arrow-up""></i> 5869","<b>51857</b> <br><i class=""fas fa-arrow-up""></i> 51",95.0,2.5,23/02/2021 19:59:29
 1,Karnataka,"<b>948466</b> <br><i class=""fas fa-arrow-up""></i> 0",6080,"<b>930087</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>12299</b> <br><i class=""fas fa-arrow-up""></i> 0",98.1,1.3,22/02/2021 20:42:29
 2,Andhra Pradesh,"<b>889339</b> <br><i class=""fas fa-arrow-up""></i> 0",590,"<b>881582</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>7167</b> <br><i class=""fas fa-arrow-up""></i> 0",99.1,0.8,22/02/2021 17:56:38
 3,Tamil Nadu,"<b>848724</b> <br><i class=""fas fa-arrow-up""></i> 0",4091,"<b>832167</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>12466</b> <br><i class=""fas fa-arrow-up""></i> 0",98.0,1.5,22/02/2021 23:42:27
-4,Kerala,"<b>1036870</b> <br><i class=""fas fa-arrow-up""></i> 0",55752,"<b>977012</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>4106</b> <br><i class=""fas fa-arrow-up""></i> 0",94.2,0.4,22/02/2021 19:22:36
+4,Kerala,"<b>1040904</b> <br><i class=""fas fa-arrow-up""></i> 4034",54949,"<b>981835</b> <br><i class=""fas fa-arrow-up""></i> 4823","<b>4120</b> <br><i class=""fas fa-arrow-up""></i> 14",94.3,0.4,23/02/2021 20:00:34
 5,Delhi,"<b>638173</b> <br><i class=""fas fa-arrow-up""></i> 145",1054,"<b>626216</b> <br><i class=""fas fa-arrow-up""></i> 130","<b>10903</b> <br><i class=""fas fa-arrow-up""></i> 2",98.1,1.7,23/02/2021 18:34:31
 6,Uttar Pradesh,"<b>602785</b> <br><i class=""fas fa-arrow-up""></i> 0",2370,"<b>591700</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>8715</b> <br><i class=""fas fa-arrow-up""></i> 0",98.2,1.4,21/02/2021 22:00:31
 7,West Bengal,"<b>574099</b> <br><i class=""fas fa-arrow-up""></i> 189",3399,"<b>560447</b> <br><i class=""fas fa-arrow-up""></i> 228","<b>10253</b> <br><i class=""fas fa-arrow-up""></i> 2",97.6,1.8,23/02/2021 19:25:37
-8,Odisha,"<b>336767</b> <br><i class=""fas fa-arrow-up""></i> 62",557,"<b>334243</b> <br><i class=""fas fa-arrow-up""></i> 77","<b>1967</b> <br><i class=""fas fa-arrow-up""></i> 0",99.3,0.6,23/02/2021 19:43:26
-9,Rajasthan,"<b>319702</b> <br><i class=""fas fa-arrow-up""></i> 76",1195,"<b>315722</b> <br><i class=""fas fa-arrow-up""></i> 87","<b>2785</b> <br><i class=""fas fa-arrow-up""></i> 0",98.8,0.9,23/02/2021 19:43:27
+8,Odisha,"<b>336767</b> <br><i class=""fas fa-arrow-up""></i> 62",557,"<b>334243</b> <br><i class=""fas fa-arrow-up""></i> 77","<b>1967</b> <br><i class=""fas fa-arrow-up""></i> 0",99.3,0.6,23/02/2021 19:59:31
+9,Rajasthan,"<b>319702</b> <br><i class=""fas fa-arrow-up""></i> 76",1195,"<b>315722</b> <br><i class=""fas fa-arrow-up""></i> 87","<b>2785</b> <br><i class=""fas fa-arrow-up""></i> 0",98.8,0.9,23/02/2021 19:59:32
 10,Telangana,"<b>297712</b> <br><i class=""fas fa-arrow-up""></i> 0",1701,"<b>294386</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>1625</b> <br><i class=""fas fa-arrow-up""></i> 0",98.9,0.5,22/02/2021 13:11:28
 11,Chhattisgarh,"<b>311159</b> <br><i class=""fas fa-arrow-up""></i> 0",2998,"<b>304355</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>3806</b> <br><i class=""fas fa-arrow-up""></i> 0",97.8,1.2,22/02/2021 21:33:34
 12,Haryana,"<b>269836</b> <br><i class=""fas fa-arrow-up""></i> 0",874,"<b>265920</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>3042</b> <br><i class=""fas fa-arrow-up""></i> 0",98.5,1.1,22/02/2021 20:42:32
@@ -17,7 +17,7 @@
 15,Madhya Pradesh,"<b>259721</b> <br><i class=""fas fa-arrow-up""></i> 0",2104,"<b>253763</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>3854</b> <br><i class=""fas fa-arrow-up""></i> 0",97.7,1.5,22/02/2021 23:42:29
 16,Assam,"<b>217406</b> <br><i class=""fas fa-arrow-up""></i> 0",1603,"<b>214712</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>1091</b> <br><i class=""fas fa-arrow-up""></i> 0",98.8,0.5,22/02/2021 23:58:30
 17,Punjab,"<b>178847</b> <br><i class=""fas fa-arrow-up""></i> 0",3167,"<b>169911</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>5769</b> <br><i class=""fas fa-arrow-up""></i> 0",95.0,3.2,22/02/2021 20:09:58
-18,Jammu and Kashmir,"<b>125925</b> <br><i class=""fas fa-arrow-up""></i> 0",735,"<b>123236</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>1954</b> <br><i class=""fas fa-arrow-up""></i> 0",97.9,1.6,22/02/2021 18:39:25
+18,Jammu and Kashmir,"<b>126019</b> <br><i class=""fas fa-arrow-up""></i> 94",766,"<b>123298</b> <br><i class=""fas fa-arrow-up""></i> 62","<b>1955</b> <br><i class=""fas fa-arrow-up""></i> 1",97.8,1.6,23/02/2021 19:59:34
 19,Jharkhand,"<b>119637</b> <br><i class=""fas fa-arrow-up""></i> 0",448,"<b>118103</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>1086</b> <br><i class=""fas fa-arrow-up""></i> 0",98.7,0.9,22/02/2021 23:58:32
 20,Uttarakhand,"<b>96719</b> <br><i class=""fas fa-arrow-up""></i> 0",1800,"<b>93230</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>1689</b> <br><i class=""fas fa-arrow-up""></i> 0",96.4,1.7,23/02/2021 00:25:33
 21,Himachal Pradesh,"<b>58403</b> <br><i class=""fas fa-arrow-up""></i> 0",240,"<b>57181</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>982</b> <br><i class=""fas fa-arrow-up""></i> 0",97.9,1.7,22/02/2021 20:00:35
@@ -32,6 +32,6 @@
 30,Ladakh,"<b>9787</b> <br><i class=""fas fa-arrow-up""></i> 0",37,"<b>9620</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>130</b> <br><i class=""fas fa-arrow-up""></i> 0",98.3,1.3,23/02/2021 09:59:29
 31,Sikkim,"<b>6132</b> <br><i class=""fas fa-arrow-up""></i> 0",146,"<b>5851</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>135</b> <br><i class=""fas fa-arrow-up""></i> 0",95.4,2.2,22/02/2021 23:42:35
 32,Andaman and Nicobar Islands,"<b>5015</b> <br><i class=""fas fa-arrow-up""></i> 0",4,"<b>4949</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>62</b> <br><i class=""fas fa-arrow-up""></i> 0",98.7,1.2,22/02/2021 23:42:36
-33,Mizoram,"<b>4410</b> <br><i class=""fas fa-arrow-up""></i> 1",21,"<b>4379</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>10</b> <br><i class=""fas fa-arrow-up""></i> 0",99.3,0.2,23/02/2021 19:43:29
+33,Mizoram,"<b>4410</b> <br><i class=""fas fa-arrow-up""></i> 1",21,"<b>4379</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>10</b> <br><i class=""fas fa-arrow-up""></i> 0",99.3,0.2,23/02/2021 19:59:35
 34,Dadra and Nagar Haveli and Daman and Diu,"<b>3384</b> <br><i class=""fas fa-arrow-up""></i> 0",31,"<b>3351</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>2</b> <br><i class=""fas fa-arrow-up""></i> 0",99.0,0.1,21/02/2021 19:31:42
 35,Lakshadweep,"<b>295</b> <br><i class=""fas fa-arrow-up""></i> 0",83,"<b>212</b> <br><i class=""fas fa-arrow-up""></i> 0","<b>0</b> <br><i class=""fas fa-arrow-up""></i> 0",71.9,0.0,22/02/2021 20:42:37
